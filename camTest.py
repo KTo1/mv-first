@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+
 cap = cv2.VideoCapture(0)
 cap.set(3,640) # set Width
 cap.set(4,480) # set Height
