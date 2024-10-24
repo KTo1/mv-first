@@ -5,7 +5,7 @@ Real Time Face Recogition
 Based on original code by Anirban Kar: https://github.com/thecodacus/Face-Recognition    
 
 Developed by Marcelo Rovai - MJRoBot.org @ 21Feb18  
-
+f
 '''
 
 import cv2
