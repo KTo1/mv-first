@@ -24,12 +24,13 @@ face_id = input('\n enter user id end press <return> ==>  ')
 print("\n [INFO] Initializing face capture. Look the camera and wait ...")
 # Initialize individual sampling face count
 count = 0
+count_samples = 30
 
 while (True):
     ret, img = cam.read()
     #img = cv2.flip(img, -1)  # flip video image vertically
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces = face_detector.detectMultiScale(gray, 1.3, 6)
+    faces = face_detector.detectMultiScale(gray, 1.3, 7)
 
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
@@ -43,7 +44,7 @@ while (True):
     k = cv2.waitKey(100) & 0xff  # Press 'ESC' for exiting video
     if k == 27:
         break
-    elif count >= 30:  # Take 30 face sample and stop video
+    elif count >= count_samples:  # Take 30 face sample and stop video
         break
 
 # Do a bit of cleanup
